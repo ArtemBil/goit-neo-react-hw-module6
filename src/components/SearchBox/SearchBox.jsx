@@ -1,7 +1,16 @@
 import React, { useId } from 'react';
+import { changeFilter } from '../../redux/filtersSlice.js';
+import { useDispatch } from 'react-redux';
 
-const SearchBox = ({ searchContact }) => {
+const SearchBox = () => {
   const id = useId();
+  const dispatch = useDispatch();
+
+  const searchContact = (event) => {
+    const value = event.target.value;
+
+    dispatch(changeFilter(value));
+  };
 
   return (
     <div className="search flex flex-col gap-2 items-start my-4 card max-w-md">
