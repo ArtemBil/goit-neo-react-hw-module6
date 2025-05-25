@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
 import { v4 as uuid4 } from 'uuid';
 import SearchBox from '../SearchBox';
 import ContactForm from '../ContactForm';
 import ContactList from '../ContactList';
 import Notification from '../Notification';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, deleteContact } from '../../store/contactsSlice.js';
-import { changeFilter } from '../../store/filtersSlice.js';
+import { addContact, deleteContact } from '../../redux/contactsSlice.js';
+import { changeFilter } from '../../redux/filtersSlice.js';
 
 function App() {
   const contacts = useSelector(state => state.contacts.items);
